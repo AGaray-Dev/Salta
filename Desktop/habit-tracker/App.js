@@ -34,7 +34,11 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {session ? (
-          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            initialParams={{ userId: session?.user?.id }}
+          />
         ) : (
           <Stack.Screen name="Login" component={LoginScreen} />
         )}
