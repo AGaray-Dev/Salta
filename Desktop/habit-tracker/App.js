@@ -12,19 +12,16 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check if user is already logged in
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       setLoading(false);
     });
 
-    // Listen for login/logout events
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-    });
-
+    } = supabase.auth.onAuthStateChange((_event, session) =>
+      setSession(session),
+    );
     return () => subscription.unsubscribe();
   }, []);
 

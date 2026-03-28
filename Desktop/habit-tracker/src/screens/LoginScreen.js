@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { colors } from "../theme";
 import {
   View,
   Text,
@@ -95,10 +96,11 @@ export default function LoginScreen() {
   );
 }
 
+// Replace the entire styles object with:
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#0f0f0f",
+    backgroundColor: colors.base,
   },
   inner: {
     flex: 1,
@@ -116,12 +118,12 @@ const styles = StyleSheet.create({
   appName: {
     fontSize: 36,
     fontWeight: "700",
-    color: "#ffffff",
+    color: colors.textPrimary,
     letterSpacing: -1,
   },
   tagline: {
     fontSize: 16,
-    color: "#666666",
+    color: colors.textSecondary,
     marginTop: 6,
   },
   form: {
@@ -129,16 +131,16 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   input: {
-    backgroundColor: "#1a1a1a",
+    backgroundColor: colors.surface,
     borderWidth: 1,
-    borderColor: "#2a2a2a",
+    borderColor: colors.border,
     borderRadius: 12,
     padding: 16,
     fontSize: 16,
-    color: "#ffffff",
+    color: colors.textPrimary,
   },
   button: {
-    backgroundColor: "#6366f1",
+    backgroundColor: colors.primary,
     borderRadius: 12,
     padding: 16,
     alignItems: "center",
@@ -153,7 +155,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   toggleText: {
-    color: "#6366f1",
+    color: colors.medium,
     textAlign: "center",
     fontSize: 14,
   },
